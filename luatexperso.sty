@@ -1,15 +1,16 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{luatexperso}[2014/05/02]
 
-\directlua{dofile("LuaTeX_myutils_arith.lua")}
-\directlua{dofile("LuaTeX_myutils_pythagore.lua")}
-\directlua{dofile("LuaTeX_myutils_progcal.lua")}
 
-\newcommand{\algoEuclide}[2]{\luaexec{arith.algoEuclide(#1,#2)}}
-\newcommand{\algoSSS}[2]{\luaexec{arith.ssSucc(#1,#2)}}
-\newcommand{\pgcd}[2]{\luaexec{tex.print(arith.pgcd(#1,#2))}}
-\newcommand{\premiersEntreEux}[2]{\luaexec{arith.premiersEntreEux(#1,#2)}}
-\newcommand{\listeDiviseurs}[1]{\luaexec{arith.listeDiviseurs(#1)}}
-\newcommand{\pythRedac}[3]{\luaexec{pyth.redac(#1,#2,#3)}}
-\newcommand{\pythCalculHyp}[3]{\luaexec{pyth.calculHyp(#1,#2,#3)}}
-\newcommand{\pythCalculCote}[3]{\luaexec{pyth.calculCote(#1,#2,#3)}}
+\directlua{rep = "/travail/david/production/info/config/texmf/tex/latex/luatexperso/"}
+\directlua{dofile(rep .. "luatexperso.lua")}
+
+\newcommand{\algoEuclide}[2]{\luaexec{luatexperso.arith.algoEuclide(#1,#2)}}
+\newcommand{\algoSSS}[2]{\luaexec{luatexperso.arith.ssSucc(#1,#2)}}
+\newcommand{\pgcd}[2]{\luaexec{tex.print(luatexperso.arith.pgcd(#1,#2))}}
+\newcommand{\premiersEntreEux}[2]{\luaexec{luatexperso.arith.premiersEntreEux(#1,#2)}}
+\newcommand{\listeDiviseurs}[1]{\luaexec{luatexperso.arith.listeDiviseurs(#1)}}
+\newcommand{\pythRedac}[3]{\luaexec{luatexperso.pyth.redac(#1,#2,#3)}}
+\newcommand{\pythCalculHyp}[3]{\luaexec{luatexperso.pyth.calculHyp(#1,#2,#3)}}
+\newcommand{\pythCalculCote}[3]{\luaexec{luatexperso.pyth.calculCote(#1,#2,#3)}}
+
